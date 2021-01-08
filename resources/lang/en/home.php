@@ -104,5 +104,10 @@ return [
     'subscribe_now'         => 'Subscribe Now',
     'activities'            => 'Activities',
     'resources'             => 'Resources',
-    'partners'              => 'Partners'
+    'partners'              => 'Partners',
+    'latest_resources'      => 'Latest Resources',
+    'activity'              => 'Activity',
+    'partner'               => 'Partner',
+    'rate_this_partner'     => 'Rate this partner'
+
 ];

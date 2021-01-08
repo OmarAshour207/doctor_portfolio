@@ -103,6 +103,10 @@ return [
     'subscribe_now'         => 'أشترك الأن',
     'activities'            => 'أنشطتنا',
     'resources'             => 'معلومات تهمك',
-    'partners'              => 'شركاؤنا'
+    'partners'              => 'شركاؤنا',
+    'latest_resources'      => 'أخر المواضيع',
+    'activity'              => 'نشاط',
+    'partner'               => 'شركاء',
+    'rate_this_partner'     => 'تقييم هذا الشريك'
 
 ];

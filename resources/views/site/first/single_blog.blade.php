@@ -74,7 +74,7 @@
                             </div>
                         </div>
                         <section class="widget widget-peru-posts-thumb">
-                            <h3 class="widget-title">{{ __('home.latest_blog') }}</h3>
+                            <h3 class="widget-title">{{ __('home.latest_resources') }}</h3>
                             <div class="post-wrap">
                                 @foreach($latest_blogs as $latest_blog)
                                     <article class="item">

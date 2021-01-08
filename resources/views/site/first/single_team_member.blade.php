@@ -146,7 +146,7 @@
 
                         </div>
                         <div class="appointment-here-form">
-                            <h2>{{ __('home.rate_this_doctor') }}</h2>
+                            <h2>{{ __('home.rate_this_partner') }}</h2>
                             @if (session('success'))
                                 <h3 class="alert alert-success"> {{ __('home.sent_successfully') }} </h3>
                             @endif

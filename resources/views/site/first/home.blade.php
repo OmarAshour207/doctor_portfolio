@@ -172,7 +172,7 @@
                             <span class="odometer" data-count="{{ $projects_count }}">00</span>
                             <span class="traget">+</span>
                         </h2>
-                        <p>{{ __('home.project') }}</p>
+                        <p>{{ __('home.activity') }}</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-sm-12">
@@ -182,7 +182,7 @@
                             <span class="odometer" data-count="{{ $team_count }}">00</span>
                             <span class="traget">+</span>
                         </h2>
-                        <p>{{ __('admin.team_members') }}</p>
+                        <p>{{ __('home.partner') }}</p>
                     </div>
                 </div>
             </div>
