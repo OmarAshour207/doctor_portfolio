@@ -40,10 +40,10 @@ Route::post('/subscribe/newsletter', 'HomeController@subscribeNewsletter')->name
 Route::match(['get', 'post'], 'webhook', 'MessengerController@index');
 
 // Admin ROUTES
-Auth::routes(['register' => false]);
+Auth::routes();
 
 
-Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'auth'] , function () {
+Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'is_admin'] , function () {
 
     Route::get('dashboard', 'AdminController@showDashboard');
 

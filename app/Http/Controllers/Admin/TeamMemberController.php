@@ -33,8 +33,11 @@ class TeamMemberController extends Controller
             $attr['meta_tag.' . $key]       = 'sometimes|nullable|string';
         }
         $attr['category_id'] = 'required|numeric';
+        $attr['status'] = 'required|numeric';
+
 
         $data = $request->validate($attr);
+        $data['status']= $request->status;
         $data['image'] = $request->image;
 
         TeamMember::create($data);
@@ -59,8 +62,10 @@ class TeamMemberController extends Controller
             $attr['meta_tag.' . $key]       = 'sometimes|nullable|string';
         }
         $attr['category_id'] = 'required|numeric';
+        $attr['status'] = 'required|numeric';
 
         $data = $request->validate($attr);
+        $data['status']= $request->status;
         $data['image'] = $request->image;
 
         $teamMember->update($data);

@@ -121,6 +121,15 @@
                         </select>
                     </div>
 
+                    <div class="form-group">
+                        <label for="status"> {{ __('admin.team_members') }} / {{ __('admin.status') }}</label>
+                        <select name="status" id="status" class="form-control select2">
+                            @for($i = 0;$i < 2;$i++)
+                                <option value="{{ $i }}" {{ $teamMember->status == $i ? 'selected' : '' }}> {{ $i == 0 ? __('admin.hidden') : __('admin.visible') }}</option>
+                            @endfor
+                        </select>
+                    </div>
+
                     @foreach(config('locales.languages') as $key => $value)
                         <div class="form-group">
                             <label for="meta_tag[{{ $key }}]"> {{ trans('admin.team_members') }} / {{ trans('admin.'. $key .'_meta_tag') }}</label>

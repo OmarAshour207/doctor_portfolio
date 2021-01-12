@@ -35,7 +35,7 @@ class HomeController extends Controller
         $page_filter = $websiteSettings->page_filter != null ? unserialize($websiteSettings->page_filter) : '';
         $services = Service::orderBy('id', 'desc')->limit(6)->get();
         $projects = Project::latest()->take(6)->get();
-        $teamMembers = TeamMember::orderBy('id', 'desc')->limit(4)->get();
+        $teamMembers = TeamMember::where('status', 1)->latest()->limit(4)->get();
         $testimonials = Testimonial::where('status', 1)->orderBy('id', 'desc')->limit(3)->get();
         $blogs = Blog::orderBy('id', 'desc')->limit(3)->get();
         $themeName = getThemeName();
@@ -90,7 +90,7 @@ class HomeController extends Controller
         $this->checkVisitor();
 
         $pages = Page::where('status', 1)->get();
-        $teamMembers = TeamMember::orderBy('id', 'desc')->limit(4)->get();
+        $teamMembers = TeamMember::where('status', 1)->latest()->limit(4)->get();
 
         $services_count = Service::all()->count();
         $projects_count = Project::all()->count();
@@ -212,7 +212,7 @@ class HomeController extends Controller
         $pages = Page::where('status', 1)->get();
         $page = $this->getPageInfo($pages, 'doctors');
 
-        $teamMembers = TeamMember::whenSearch(\request()->search)->latest()->paginate(6);
+        $teamMembers = TeamMember::where('status', 1)->whenSearch(\request()->search)->latest()->paginate(6);
         $categories = Category::latest()->get();
 
         return view('site.first.doctors',
@@ -224,7 +224,7 @@ class HomeController extends Controller
     {
         $pages = Page::where('status', 1)->get();
         $page = $this->getPageInfo($pages, 'doctors');
-        $teamMember = TeamMember::findOrFail($id);
+        $teamMember = TeamMember::where('status', 1)->findOrFail($id);
         $testimonials = Testimonial::where('status', 1)->latest()->take(2)->get();
 
         return view('site.first.single_team_member',

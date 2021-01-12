@@ -132,7 +132,7 @@ return [
     'pages'                 => 'Pages',
     'slug'                  => 'Slug',
     'all_pages'             => 'All Pages',
-    'doctors'               => 'Partners',
+    'doctors'               => 'Services Providers',
     'hidden'                => 'Hidden',
     'rates'                 => 'Rates',
     'categories'            => 'Categories',

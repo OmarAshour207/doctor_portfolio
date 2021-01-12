@@ -26,10 +26,16 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         View::composer([
-            'dashboard.layouts.app'
+            'dashboard.layouts.app',
+            'auth.login',
+            'auth.register'
         ], 'App\Http\View\Composers\PageComposer');
 
         View::composer(
-            'site.first.layouts.app', 'App\Http\View\Composers\ServiceComposer');
+            [
+                'site.first.layouts.app',
+                'auth.login',
+                'auth.register'
+            ], 'App\Http\View\Composers\ServiceComposer');
     }
 }

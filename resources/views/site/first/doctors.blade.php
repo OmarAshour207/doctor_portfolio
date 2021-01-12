@@ -76,7 +76,7 @@
                             <br>
                             <span class="top-title">{{ $teamMember->title }}</span>
                             <p>{{ Str::limit($teamMember->description, 200) }}</p>
-                            <a href="{{ url('/') }}" class="btn btn-primary">
+                            <a href="https://wa.me/2001551107676" class="btn btn-primary" target="_blank">
                                 {{ __('home.book_appointment') }}
                             </a>
                         </div>

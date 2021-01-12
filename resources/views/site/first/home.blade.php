@@ -14,7 +14,7 @@
                                     <h1>{{ $slider->title }}</h1>
                                     <p>{{ $slider->description }}</p>
                                     <div class="slider-btn">
-                                        <a class="default-btn" href="#">
+                                        <a class="default-btn" href="https://wa.me/2001551107676">
                                             {{ __('home.book_appointment') }}
                                         </a>
                                     </div>
@@ -24,6 +24,36 @@
                     </div>
                 </div>
             @endforeach
+        </div>
+    </section>
+
+
+    <section class="blog-area pt-100 pb-70">
+        <div class="container">
+            <div class="section-title">
+                <h2>{{ __('home.resources') }}</h2>
+            </div>
+            <div class="row">
+                @foreach($blogs as $index => $blog)
+                    <div class="col-lg-4 col-md-6 {{ $index == 2 ? 'offset-md-3 offset-lg-0' : '' }}">
+                        <div class="single-blog">
+                            <a href="{{ url('/blogs/' . $blog->id . '/' . $blog->title) }}">
+                                <img src="{{ $blog->blog_image }}" alt="Image">
+                            </a>
+                            <span>{{ date('M Y d', strtotime($blog->created_at)) }}</span>
+                            <div class="blog-content">
+                                <a href="{{ url('/blogs/' . $blog->id . '/' . $blog->title) }}">
+                                    <h3>{{ $blog->title }}</h3>
+                                </a>
+                                <a href="{{ url('/blogs/' . $blog->id . '/' . $blog->title) }}" class="read-more">
+                                    {{ __('home.read_more') }}
+                                    <i class="bx bx-plus"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
         </div>
     </section>
 
@@ -259,36 +289,6 @@
                         <h3>{{ $testimonial->name }}</h3>
                         <span>{{ $testimonial->title }}</span>
 
-                    </div>
-                @endforeach
-            </div>
-        </div>
-    </section>
-
-
-    <section class="blog-area pt-100 pb-70">
-        <div class="container">
-            <div class="section-title">
-                <h2>{{ __('home.resources') }}</h2>
-            </div>
-            <div class="row">
-                @foreach($blogs as $index => $blog)
-                    <div class="col-lg-4 col-md-6 {{ $index == 2 ? 'offset-md-3 offset-lg-0' : '' }}">
-                        <div class="single-blog">
-                            <a href="{{ url('/blogs/' . $blog->id . '/' . $blog->title) }}">
-                                <img src="{{ $blog->blog_image }}" alt="Image">
-                            </a>
-                            <span>{{ date('M Y d', strtotime($blog->created_at)) }}</span>
-                            <div class="blog-content">
-                                <a href="{{ url('/blogs/' . $blog->id . '/' . $blog->title) }}">
-                                    <h3>{{ $blog->title }}</h3>
-                                </a>
-                                <a href="{{ url('/blogs/' . $blog->id . '/' . $blog->title) }}" class="read-more">
-                                    {{ __('home.read_more') }}
-                                    <i class="bx bx-plus"></i>
-                                </a>
-                            </div>
-                        </div>
                     </div>
                 @endforeach
             </div>

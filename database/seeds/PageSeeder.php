@@ -12,7 +12,7 @@ class PageSeeder extends Seeder
     public function run()
     {
         $pages = [
-            'about', 'services', 'projects', 'blogs', 'doctors', 'contact-us'
+            'about', 'services', 'projects', 'blogs', 'doctors', 'contact-us', 'login', 'register'
         ];
 
         for ($i = 0; $i < count($pages); $i++) {
@@ -23,8 +23,8 @@ class PageSeeder extends Seeder
                     'en'    => $pages[$i] . 'عنوان'
                 ],
                 'description'   => [
-                    'ar'        => $pages[$i] . ' Description',
-                    'en'        => $pages[$i] . ' وصف'
+                    'ar'        => $pages[$i] . ' وصف',
+                    'en'        => $pages[$i] . ' description'
                 ],
             ]);
         }

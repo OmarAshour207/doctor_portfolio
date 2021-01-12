@@ -110,7 +110,7 @@
 
 
 <div class="icon-bar">
-    <a href="https://wa.me/" target="_blank" class="whatsapp">
+    <a href="https://wa.me/2001551107676" target="_blank" class="whatsapp">
         <img src="{{ asset('site/part1/img/whats.png') }}"style="max-width: 100%;max-height: 52px;">
     </a>
 </div>

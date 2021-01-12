@@ -59,7 +59,7 @@
                                 <i class="bx bx-time"></i>
                                 {{ __('home.availability') }}
                             </h3>
-                            <a href="{{ url('/') }}" class="default-btn mt-4">
+                            <a href="https://wa.me/2001551107676" target="_blank" class="default-btn mt-4">
                                 {{ __('home.book_appointment') }}
                             </a>
                         </div>

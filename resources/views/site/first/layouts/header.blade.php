@@ -62,12 +62,46 @@
                                     </a>
                                 </li>
                                 @foreach($pages as $page)
-                                    <li class="nav-item">
-                                        <a href="{{ url($page->slug) }}" class="nav-link {{ setActive($page->slug) }}">
-                                            {{ $page->title }}
-                                        </a>
-                                    </li>
+                                    @if ($page->slug != 'login' && $page->slug != 'register')
+                                        <li class="nav-item">
+                                            <a href="{{ url($page->slug) }}" class="nav-link {{ setActive($page->slug) }}">
+                                                {{ $page->title }}
+                                            </a>
+                                        </li>
+                                    @endif
                                 @endforeach
+
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link dropdown-toggle">
+                                        {{ auth()->check() ? auth()->user()->name : __('Login') }}
+                                        <i class="bx bx-user"></i>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        @if (auth()->check())
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="{{ route('logout') }}"
+                                                   onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                                    {{ __('admin.logout') }}
+                                                </a>
+                                                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                                    @csrf
+                                                </form>
+                                            </li>
+                                        @else
+                                            @foreach($pages as $page)
+                                                @if ($page->slug == 'login' || $page->slug == 'register')
+                                                    <li class="nav-item">
+                                                        <a href="{{ url($page->slug) }}" class="nav-link {{ setActive($page->slug) }}">
+                                                            {{ $page->title }}
+                                                        </a>
+                                                    </li>
+                                                @endif
+                                            @endforeach
+                                        @endif
+                                    </ul>
+                                </li>
+
 
                                 <li class="nav-item">
                                     <a href="#" class="nav-link dropdown-toggle">

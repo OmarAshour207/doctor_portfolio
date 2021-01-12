@@ -15,6 +15,7 @@ class TeamMember extends Model
         'title',
         'description',
         'category_id',
+        'status',
         'meta_tag',
         'image'
     ];

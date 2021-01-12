@@ -39,15 +39,16 @@
                             <th style="width: 40px;"> {{ trans('admin.ar_title') }} </th>
                             <th style="width: 40px;"> {{ trans('admin.en_title') }} </th>
                             <th style="width: 40px;"> {{ trans('admin.category') }} </th>
+                            <th style="width: 40px;"> {{ trans('admin.status') }} </th>
                             <th style="width: 120px;" >{{ trans('admin.image') }}</th>
-                            <th style="width: 30px;" > {{ trans('admin.action') }} </th>
+                            <th style="width: 92px;" > {{ trans('admin.action') }} </th>
                         </tr>
                         </thead>
                         <tbody class="list" id="companies">
                         @if($teamMembers->count() > 0)
                             @foreach($teamMembers as $index => $teamMember)
                         <tr>
-                            <td class="text-left">
+                            <td class="text-left" style="width: 18px;">
                                 <div class="custom-control custom-checkbox">
                                     <input type="checkbox" class="custom-control-input js-check-selected-row" id="customCheck1_20">
                                     <label class="custom-control-label" for="customCheck1_20"><span class="text-hide">Check</span></label>
@@ -96,13 +97,23 @@
                                 </div>
                             </td>
 
+                            <td style="width: 40px;">
+                                <div class="d-flex align-items-center">
+                                    <div class="d-flex align-items-center">
+                                        <button class="btn btn-{{ $teamMember->status == 1 ? 'primary' : 'danger' }}">
+                                            {{ $teamMember->status == 1 ? __('admin.visible') : __('admin.hidden') }}
+                                        </button>
+                                    </div>
+                                </div>
+                            </td>
+
                             <td style="width:120px" class="text-center">
                                 <a href="{{ $teamMember->member_image }}" data-lity>
                                     <img src="{{ $teamMember->thumb_image }}" >
                                 </a>
                             </td>
 
-                            <td>
+                            <td style="width: 92px;">
                                 <a href="{{ route('team-members.edit', $teamMember->id) }}" class="btn btn-sm btn-link">
                                     <i class="fa fa-edit fa-2x"></i>
                                 </a>
