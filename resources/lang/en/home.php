@@ -4,6 +4,7 @@ return [
     'about_us'              => 'About Us',
     'home'                  => 'Home',
     'our_services'          => 'Our Services',
+    'services'          => 'Services',
     'our_projects'          => 'Our Projects',
     'language'              => 'Language',
     'arabic'                => 'Arabic',
@@ -61,7 +62,7 @@ return [
     'for_your_company'      => 'For Your Company',
     'latest'                => 'Latest',
     'news'                  => 'News',
-    'service_details'       => 'Service Details',
+    'service_details'       => 'Service Provider Details',
     'service'               => 'Service',
     'details'               => 'Details',
     'related'               => 'Related',
@@ -90,10 +91,10 @@ return [
     'our_products'          => 'Our Products',
     'popular_services'      => 'Popular Services',
     'popular_products'      => 'Popular Products',
-    'book_appointment'      => 'Get the coupon',
+    'book_appointment'      => 'Get code',
     'expert_doctors'        => 'Expert services providers',
     'on'                    => 'On',
-    'doctor_details'        => 'Doctor Details',
+    'doctor_details'        => 'Partner Details',
     'availability'          => 'Availability',
     'rate_this_doctor'      => 'Rate this service provider',
     'select_stars'          => 'Select Stars',
@@ -112,7 +113,7 @@ return [
     'already_have_an_account'   => 'Already Have An Account?',
     'create_an_account'     => 'Create an account!',
     'not_a_member'          => 'Not a member?',
-    'search_on_service_providers'   => 'Search on service providers'
-
-
+    'search_on_service_providers'   => 'Search on service providers',
+    'register_as_user'      => 'Register as User',
+    'register_as_service_provider'  => 'Register as Service Provider'
 ];
