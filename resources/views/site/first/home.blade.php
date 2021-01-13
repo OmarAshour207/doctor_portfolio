@@ -31,28 +31,29 @@
     <section class="blog-area pt-100 pb-70">
         <div class="container">
             <div class="section-title">
-                <h2>{{ __('home.resources') }}</h2>
+                <h2>{{ __('home.search_on_service_providers') }}</h2>
             </div>
             <div class="row">
-                @foreach($blogs as $index => $blog)
-                    <div class="col-lg-4 col-md-6 {{ $index == 2 ? 'offset-md-3 offset-lg-0' : '' }}">
-                        <div class="single-blog">
-                            <a href="{{ url('/blogs/' . $blog->id . '/' . $blog->title) }}">
-                                <img src="{{ $blog->blog_image }}" alt="Image">
-                            </a>
-                            <span>{{ date('M Y d', strtotime($blog->created_at)) }}</span>
-                            <div class="blog-content">
-                                <a href="{{ url('/blogs/' . $blog->id . '/' . $blog->title) }}">
-                                    <h3>{{ $blog->title }}</h3>
-                                </a>
-                                <a href="{{ url('/blogs/' . $blog->id . '/' . $blog->title) }}" class="read-more">
-                                    {{ __('home.read_more') }}
-                                    <i class="bx bx-plus"></i>
-                                </a>
+                <div class="col-lg-12 col-md-12">
+                    <form method="get" action="{{ url('doctors') }}">
+                        <div class="row">
+                            <div class="col-md-9">
+                                <select class="form-control select2" name="search">
+                                    <option> {{ __('home.select_search_category') }} </option>
+                                    @foreach($categories as $category)
+                                        <option value="{{ $category->id }}" {{ old('search', request('search')) == $category->id ? 'selected' : '' }}> {{ $category->name }} </option>
+                                    @endforeach
+                                </select>
+                            </div>
+
+                            <div class="col-lg-3">
+                                <button class="default-btn" type="submit">
+                                    {{ __('home.search') }}
+                                </button>
                             </div>
                         </div>
-                    </div>
-                @endforeach
+                    </form>
+                </div>
             </div>
         </div>
     </section>
@@ -93,6 +94,36 @@
             </section>
         @endif
     @endforeach
+
+
+    <section class="blog-area pt-100 pb-70">
+        <div class="container">
+            <div class="section-title">
+                <h2>{{ __('home.resources') }}</h2>
+            </div>
+            <div class="row">
+                @foreach($blogs as $index => $blog)
+                    <div class="col-lg-4 col-md-6 {{ $index == 2 ? 'offset-md-3 offset-lg-0' : '' }}">
+                        <div class="single-blog">
+                            <a href="{{ url('/blogs/' . $blog->id . '/' . $blog->title) }}">
+                                <img src="{{ $blog->blog_image }}" alt="Image">
+                            </a>
+                            <span>{{ date('M Y d', strtotime($blog->created_at)) }}</span>
+                            <div class="blog-content">
+                                <a href="{{ url('/blogs/' . $blog->id . '/' . $blog->title) }}">
+                                    <h3>{{ $blog->title }}</h3>
+                                </a>
+                                <a href="{{ url('/blogs/' . $blog->id . '/' . $blog->title) }}" class="read-more">
+                                    {{ __('home.read_more') }}
+                                    <i class="bx bx-plus"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+    </section>
 
 
     <section class="services-area bg pt-100 pb-70">

@@ -47,12 +47,15 @@ class HomeController extends Controller
 
         $pages = Page::where('status', 1)->get();
 
+        $categories = Category::latest()->get();
+
         return view('site.' . $themeName . '.home',
                     compact('page_filter', 'sliders',
                             'services', 'teamMembers',
                             'testimonials', 'blogs',
                             'services_count', 'projects_count',
-                            'team_count', 'pages', 'projects'));
+                            'team_count', 'pages', 'projects',
+                            'categories'));
     }
 
     public function checkVisitor()

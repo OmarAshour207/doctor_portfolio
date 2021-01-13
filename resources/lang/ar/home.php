@@ -111,5 +111,6 @@ return [
     'already_have_an_account'   => 'لديك بالفعل حساب ؟',
     'create_an_account'     => 'انشاء حساب!',
     'not_a_member'          => 'لست عضو ؟',
+    'search_on_service_providers'   => 'أبحث عن مقدمين الخدمه'
 
 ];

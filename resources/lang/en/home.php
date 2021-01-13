@@ -112,5 +112,7 @@ return [
     'already_have_an_account'   => 'Already Have An Account?',
     'create_an_account'     => 'Create an account!',
     'not_a_member'          => 'Not a member?',
+    'search_on_service_providers'   => 'Search on service providers'
+
 
 ];
